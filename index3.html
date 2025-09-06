@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>WhistleIT-Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364);
+      background-size: 400% 400%;
+      animation: gradientShift 15s ease infinite;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .glass {
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      transition: all 0.3s ease-in-out;
+    }
+
+    .neon {
+      text-shadow: 0 0 5px #0ff, 0 0 10px #0ff;
+    }
+
+    .btn-glow:hover {
+      box-shadow: 0 0 8px #0ff;
+      transform: scale(1.02);
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      transition: all 0.2s ease-in-out;
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.15);
+    }
+
+    .vote-btn:hover {
+      transform: scale(1.1);
+      text-shadow: 0 0 8px #0ff;
+    }
+  </style>
+</head>
+<body class="text-white min-h-screen flex flex-col">
+
+  <!-- Top Bar -->
+  <header class="px-6 py-4 flex justify-between items-center shadow-md bg-black bg-opacity-50 backdrop-blur-lg">
+        <a href="index.html" class="text-cyan-400 hover:underline">← Back</a>
+
+    <h1 class="text-2xl font-bold text-cyan-400 neon">WhistleIT</h1>
+    <button class="bg-cyan-500 px-4 py-2 rounded btn-glow transition duration-200 hover:bg-cyan-400">
+      🔐 Wallet Connected
+    </button>
+  </header>
+
+  <!-- Category Filter -->
+  <div class="px-6 py-4">
+    <select class="bg-gray-800 text-white px-4 py-2 rounded w-full border border-cyan-500 focus:outline-none">
+      <option selected>All Categories</option>
+      <option>Domestic Violence</option>
+      <option>Corporate Scam</option>
+      <option>Political Corruption</option>
+      <option>Social Injustice</option>
+    </select>
+  </div>
+
+  <!-- Feed -->
+  <main class="flex-1 overflow-y-auto px-6 py-4 space-y-6">
+
+    <!-- Case Card 1 -->
+    <div class="glass card p-5 rounded-xl flex gap-5 items-start transition">
+      <div class="flex flex-col items-center">
+        <button class="text-cyan-400 text-2xl vote-btn">⬆️</button>
+        <span class="text-white font-semibold">45</span>
+        <button class="text-red-400 text-2xl vote-btn">⬇️</button>
+      </div>
+
+      <div class="w-full">
+        <h2 class="text-xl font-semibold text-cyan-300">Corporate Bribery in XYZ Ltd</h2>
+        <p class="text-sm text-gray-300 mt-1">Multiple executives involved in financial misconduct across multiple branches...</p>
+        <div class="text-xs mt-2 flex flex-wrap gap-3 text-gray-400">
+          <span class="bg-cyan-900 text-cyan-300 px-2 py-0.5 rounded-full">Corporate Scam</span>
+          <span class="bg-yellow-800 text-yellow-300 px-2 py-0.5 rounded-full">🔥 Trending</span>
+          <span>📅 2 days ago</span>
+        </div>
+        
+        <div class="flex items-center mt-3 text-sm text-gray-400">
+          👤 3 contributors
+          <div class="flex space-x-1 mx-2">
+            <img src="https://api.dicebear.com/6.x/shapes/svg?seed=anon1" class="w-6 h-6 rounded-full border border-cyan-500" />
+            <img src="https://api.dicebear.com/6.x/shapes/svg?seed=anon2" class="w-6 h-6 rounded-full border border-cyan-500" />
+            <img src="https://api.dicebear.com/6.x/shapes/svg?seed=anon3" class="w-6 h-6 rounded-full border border-cyan-500" />
+          </div>
+          • <a href="Thread.html" class="text-cyan-400 underline ml-1">Add Evidence</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Case Card 2 -->
+    <div class="glass card p-5 rounded-xl flex gap-5 items-start transition">
+      <div class="flex flex-col items-center">
+        <button class="text-cyan-400 text-2xl vote-btn">⬆️</button>
+        <span class="text-white font-semibold">12</span>
+        <button class="text-red-400 text-2xl vote-btn">⬇️</button>
+      </div>
+      <div class="w-full">
+        <h2 class="text-xl font-semibold text-cyan-300">Domestic Abuse Report - Texas</h2>
+        <p class="text-sm text-gray-300 mt-1">Anonymous report from a neighbor about ongoing domestic abuse...</p>
+        <div class="text-xs mt-2 flex flex-wrap gap-3 text-gray-400">
+          <span class="bg-pink-900 text-pink-300 px-2 py-0.5 rounded-full">Domestic Violence</span>
+          <span>📅 5 days ago</span>
+        </div>
+        <div class="flex items-center mt-3 text-sm text-gray-400">
+          👤 1 contributor
+          <div class="flex space-x-1 mx-2">
+            <img src="https://api.dicebear.com/6.x/shapes/svg?seed=anon4" class="w-6 h-6 rounded-full border border-cyan-500" />
+          </div>
+          • <button class="text-cyan-400 underline ml-1">Add Evidence</button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Bottom Navbar -->
+  <footer class="bg-black bg-opacity-40 backdrop-blur p-4 flex justify-around text-sm shadow-inner border-t border-gray-700">
+    <a href="index3.html" class="flex flex-col items-center text-cyan-400 hover:text-cyan-300 transition">
+      <span>🏠</span>
+      <span>Home</span>
+    </a>
+    <a href="yourcase.html" class="flex flex-col items-center text-gray-400 hover:text-cyan-300 transition">
+      <span>📂</span>
+      <span>Your Cases</span>
+    </a>
+    <a href="settings.html" class="flex flex-col items-center text-gray-400 hover:text-cyan-300 transition">
+      <span>⚙️</span>
+      <span>Settings</span>
+    </a>
+  </footer>
+
+</body>
+</html>

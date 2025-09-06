@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Case Detail - Anon Portal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background: #111827;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .glass {
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+  </style>
+</head>
+<body class="text-white">
+
+  <!-- Header -->
+  <header class="flex justify-between items-center p-4 border-b border-gray-700">
+    <h1 class="text-xl font-bold text-cyan-400">Case Detail</h1>
+    <a href="Thread.html" class="bg-cyan-500 px-4 py-2 rounded">Back</a>
+  </header>
+
+  <!-- Main -->
+  <main class="p-6 space-y-6">
+
+    <!-- Case Summary -->
+    <div class="glass p-5 rounded-xl space-y-2">
+      <h2 class="text-2xl font-bold text-cyan-300">Corporate Fraud at XYZ Ltd</h2>
+      <p class="text-gray-300">
+        A whistleblower has reported a suspected fraud involving invoice duplication and fund misdirection in XYZ Ltd.
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor qui laboriosam possimus repudiandae voluptatibus dicta eos, maiores nihil illo
+       ex reprehenderit nam consectetur facere labore voluptates officia, sunt quasi perspiciatis.</p>
+      <p class="text-sm text-gray-500">📅 Reported: Jan 8, 2025 • 🔼 45 votes</p>
+    </div>
+
+    <!-- Restricted Button (Visible to All) -->
+    <div class="glass p-5 rounded-xl">
+      <button disabled class="flex items-center space-x-2 bg-gray-800 text-white px-4 py-2 rounded cursor-not-allowed opacity-70">
+        <svg class="h-5 w-5 text-yellow-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 11c0-1.105-.895-2-2-2s-2 .895-2 2v2h4v-2zm4 0v2c0 1.105-.895 2-2 2h-4c-1.105 0-2-.895-2-2v-2c0-2.209 1.791-4 4-4s4 1.791 4 4z" />
+        </svg>
+        <span>Restricted - Only Authorities</span>
+      </button>
+    </div>
+
+    <!-- Authority View (Hidden by Default) -->
+    <div id="authorityPanel" class="hidden space-y-4 border-t border-gray-700 pt-6">
+
+      <h3 class="text-xl font-bold text-yellow-400">🔒 Authority Access</h3>
+
+      <div class="glass p-4 rounded space-y-2">
+        <p><strong>Submitted by:</strong> 7cf...e3A</p>
+        <p><strong>Initial Report Time:</strong> Jan 8, 2025 - 10:34 AM</p>
+        <p><strong>Status:</strong> Awaiting Review</p>
+      </div>
+
+      <!-- Evidence Section -->
+      <div class="space-y-2">
+        <h4 class="text-lg font-semibold text-cyan-300">📂 Evidence</h4>
+
+        <div class="glass p-4 rounded space-y-2">
+          <p>🧾 “Bank statement anomalies identified in Q3 reports.”</p>
+          <img src="evidence.jpg" alt="Evidence image" class="rounded max-h-60 object-cover" />
+          <p class="text-xs text-gray-500">Submitted: Jan 9</p>
+        </div>
+
+        <div class="glass p-4 rounded space-y-2">
+          <p>📎 “Duplicate invoice IDs across 3 vendors.”</p>
+          <video controls class="rounded w-full max-h-64">
+            <source src="clip.mp4" type="video/mp4" />
+          </video>
+          <p class="text-xs text-gray-500">Submitted: Jan 11</p>
+        </div>
+      </div>
+
+      <!-- Actions -->
+      <div class="flex space-x-4 pt-4">
+        <button class="bg-yellow-500 hover:bg-yellow-400 text-black px-4 py-2 rounded">Mark Under Review</button>
+        <button class="bg-red-500 hover:bg-red-400 text-white px-4 py-2 rounded">Escalate</button>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Role Control -->
+  <script>
+    // Simulate role assignment (set via backend or wallet auth)
+    const userRole = localStorage.getItem("userRole") || "public";
+
+localStorage.setItem("userRole", "authority");    // Show only summary
+
+
+    if (userRole === "authority") {
+      document.getElementById("authorityPanel").classList.remove("hidden");
+    }
+  </script>
+</body>
+</html>

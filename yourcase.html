@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Your Cases - Anon Portal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .glass {
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .card:hover {
+      transform: translateY(-2px);
+      transition: all 0.2s ease-in-out;
+      box-shadow: 0 0 10px rgba(0,255,255,0.1);
+    }
+  </style>
+</head>
+<body class="text-white min-h-screen flex flex-col">
+
+  <!-- Top Bar -->
+  <header class="px-6 py-4 flex justify-between items-center shadow-md">
+    <h1 class="text-2xl font-bold text-cyan-400">Your Cases</h1>
+    <button class="bg-cyan-500 px-4 py-2 rounded hover:bg-cyan-400">
+      🔐 Wallet: 9xy...hY2
+    </button>
+  </header>
+
+  <!-- Main Content -->
+
+<div class="w-full flex justify-start mb-4 px-4">
+  <a href="submit.html"
+     class="bg-cyan-500 hover:bg-cyan-400 text-white px-6 py-3 rounded-lg text-base font-semibold shadow-md transition duration-200">
+    ➕ New Case
+  </a>
+</div>
+
+
+</div>
+
+  <main class="flex-1 overflow-y-auto px-6 py-4 space-y-6">
+
+    <!-- Case Card -->
+    <div class="glass card p-5 rounded-xl shadow-lg">
+      <div class="flex justify-between items-start">
+        <div>
+          <h2 class="text-lg font-semibold text-cyan-300">Bribery in Govt Contracts</h2>
+          <p class="text-sm text-gray-300 mt-1">Reported issue with public works department...</p>
+          <div class="text-sm text-gray-500 mt-2">
+            🕒 Submitted: May 12, 2025 • 🔁 Status: <span class="text-yellow-400">Under Review</span>
+          </div>
+        </div>
+        <div class="text-center text-cyan-400">
+          <p class="text-lg font-bold">34</p>
+          <p class="text-sm text-white">Upvotes</p>
+        </div>
+      </div>
+      <div class="mt-4 flex gap-3">
+        <button class="bg-cyan-500 hover:bg-cyan-400 text-sm px-4 py-2 rounded">Add Evidence</button>
+        <a href="viewcase.html" class="bg-gray-700 hover:bg-gray-600 text-sm px-4 py-2 rounded">View Details</a>
+      </div>
+    </div>
+
+    <!-- Another Case -->
+    <div class="glass card p-5 rounded-xl shadow-lg">
+      <div class="flex justify-between items-start">
+        <div>
+          <h2 class="text-lg font-semibold text-cyan-300">School Abuse Case</h2>
+          <p class="text-sm text-gray-300 mt-1">Student reported repeated mistreatment in XYZ school...</p>
+          <div class="text-sm text-gray-500 mt-2">
+            🕒 Submitted: May 10, 2025 • 🔁 Status: <span class="text-green-400">Published</span>
+          </div>
+        </div>
+        <div class="text-center text-cyan-400">
+          <p class="text-lg font-bold">112</p>
+          <p class="text-sm text-white">Upvotes</p>
+        </div>
+      </div>
+      <div class="mt-4 flex gap-3">
+        <button class="bg-cyan-500 hover:bg-cyan-400 text-sm px-4 py-2 rounded">Add Evidence</button>
+        <button class="bg-gray-700 hover:bg-gray-600 text-sm px-4 py-2 rounded">View Details</button>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Final Submission Button -->
+
+
+
+  <!-- Bottom Navbar -->
+  <footer class="bg-gray-900 p-4 flex justify-around text-sm shadow-inner border-t border-gray-700">
+    <a href="Thread.html" class="flex flex-col items-center text-gray-400 hover:text-cyan-300">
+      <span>🏠</span>
+      <span>Home</span>
+    </a>
+    <a href="yourcase.html" class="flex flex-col items-center text-cyan-400">
+      <span>📂</span>
+      <span>Your Cases</span>
+    </a>
+    <a href="settings.html" class="flex flex-col items-center text-gray-400 hover:text-cyan-300">
+      <span>⚙️</span>
+      <span>Settings</span>
+    </a>
+  </footer>
+
+</body>
+
+</html>

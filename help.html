@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Help Center - WhistleIT</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364);
+      background-size: 400% 400%;
+      animation: bgShift 15s ease infinite;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    @keyframes bgShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .glass {
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      border-radius: 1rem;
+    }
+  </style>
+</head>
+<body class="text-white min-h-screen flex flex-col px-6 py-8">
+
+  <header class="text-center mb-8 glass py-4 shadow-md">
+    <h1 class="text-3xl font-bold text-cyan-400">🆘 Help Center</h1>
+    <p class="text-gray-300 mt-2">How can we assist you today?</p>
+  </header>
+
+  <main class="max-w-2xl mx-auto space-y-8 glass p-6">
+
+    <!-- FAQ Section -->
+    <section>
+      <h2 class="text-xl font-semibold mb-4 text-cyan-300">📌 Frequently Asked Questions</h2>
+      <ul class="space-y-4 text-gray-300">
+        <li><strong>Q:</strong> How do I connect my wallet?<br/><strong>A:</strong> Go to the Settings page and use the Connect Wallet option.</li>
+        <li><strong>Q:</strong> Can I change my alias?<br/><strong>A:</strong> Yes, just edit the "Display Alias" field and save.</li>
+        <li><strong>Q:</strong> Is WhistleIT secure?<br/><strong>A:</strong> We prioritize user anonymity and data protection with end-to-end encryption.</li>
+      </ul>
+    </section>
+
+    <!-- Contact Section -->
+    <section>
+      <h2 class="text-xl font-semibold mb-4 text-cyan-300">📨 Contact Support</h2>
+      <p class="text-gray-300 mb-2">Still need help? Reach out to us:</p>
+      <ul class="text-gray-300 space-y-2">
+        <li>Email: <a href="mailto:support@whistleit.com" class="text-cyan-400 underline">support@whistleit.com</a></li>
+        <li>Telegram: <a href="#" class="text-cyan-400 underline">@WhistleITSupport</a></li>
+      </ul>
+    </section>
+
+    <!-- Support Form -->
+    <section>
+      <h2 class="text-xl font-semibold mb-4 text-cyan-300">📬 Send Us a Message</h2>
+      <form class="space-y-4">
+        <input type="email" placeholder="Your email" required class="w-full px-4 py-2 rounded bg-gray-800 text-white border border-gray-600 focus:outline-none focus:border-cyan-400" />
+        <textarea rows="4" placeholder="Describe your issue..." required class="w-full px-4 py-2 rounded bg-gray-800 text-white border border-gray-600 focus:outline-none focus:border-cyan-400"></textarea>
+        <button type="submit" class="w-full bg-cyan-500 hover:bg-cyan-400 text-white py-2 rounded transition">Submit</button>
+      </form>
+    </section>
+
+  </main>
+
+</body>
+</html>

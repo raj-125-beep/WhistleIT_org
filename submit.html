@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Submit Case - Anon Portal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    @keyframes fadeSlideUp {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-in {
+      animation: fadeSlideUp 0.8s ease-out both;
+    }
+
+    body {
+      background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .glass {
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .btn-glow:hover {
+      box-shadow: 0 0 8px #0ff;
+      transform: scale(1.02);
+    }
+
+    .neon {
+      text-shadow: 0 0 5px #0ff, 0 0 10px #0ff;
+    }
+  </style>
+</head>
+<body class="text-white min-h-screen flex flex-col items-center justify-center px-4">
+
+  <!-- Header -->
+  <header class="w-full flex justify-between items-center px-6 py-4">
+    <a href="Thread.html" class="text-cyan-400 hover:underline">← Back</a>
+    <h1 class="text-2xl font-bold text-cyan-400 neon">Submit New Case</h1>
+    <span></span>
+  </header>
+
+  <!-- Form Container -->
+  <form id="caseForm" class="glass p-8 rounded-xl w-full max-w-2xl shadow-lg mt-4 fade-in">
+    <div class="mb-4">
+      <label class="block mb-2 text-sm font-medium text-cyan-300">Case Title</label>
+      <input type="text" placeholder="e.g. Bribery in ABC Corp"
+             class="w-full px-4 py-2 bg-gray-900 border border-cyan-500 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-cyan-400" required />
+    </div>
+
+    <div class="mb-4">
+      <label class="block mb-2 text-sm font-medium text-cyan-300">Category</label>
+      <select class="w-full px-4 py-2 bg-gray-900 border border-cyan-500 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-cyan-400" required>
+        <option>Domestic Violence</option>
+        <option>Corporate Scam</option>
+        <option>Political Corruption</option>
+        <option>Social Injustice</option>
+        <option>Others</option>
+      </select>
+    </div>
+
+    <div class="mb-4">
+      <label class="block mb-2 text-sm font-medium text-cyan-300">Description</label>
+      <textarea rows="6" placeholder="Describe the issue in detail..."
+                class="w-full px-4 py-2 bg-gray-900 border border-cyan-500 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-cyan-400" required></textarea>
+    </div>
+
+    <div class="mb-6">
+      <label class="block mb-2 text-sm font-medium text-cyan-300">Upload Evidence/Proofs</label>
+      <input type="file" class="w-full text-white" />
+    </div>
+
+    <button type="submit"
+            class="bg-cyan-500 hover:bg-cyan-400 text-white px-6 py-3 rounded-lg font-semibold shadow-md btn-glow w-full">
+       🚀 Submit Case 
+    </button>
+  </form>
+
+<script>
+  const form = document.getElementById("caseForm");
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    // You can handle form data here if needed before redirection
+    window.location.href = "viewcase.html"; // changed from success2.html
+  });
+</script>
+
+
+</body>
+</html>

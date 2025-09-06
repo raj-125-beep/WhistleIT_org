@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Settings - WhistleIT</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364);
+      background-size: 400% 400%;
+      animation: gradientShift 15s ease infinite;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .fade-in {
+      animation: fadeIn 0.8s ease-in-out both;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .btn-glow:hover {
+      box-shadow: 0 0 10px #0ff;
+      transform: scale(1.02);
+    }
+
+    .glass {
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      border-radius: 1rem;
+    }
+  </style>
+</head>
+<body class="text-white min-h-screen flex flex-col">
+
+  <header class="px-6 py-4 shadow-md flex justify-between items-center glass m-4">
+    <h1 class="text-2xl font-bold text-cyan-400">⚙️ Settings</h1>
+  </header>
+
+  <main class="max-w-xl mx-auto px-6 py-8 fade-in w-full space-y-8 glass">
+
+    <!-- Avatar & Wallet -->
+    <div class="flex items-center space-x-4">
+      <img src="https://api.dicebear.com/6.x/thumbs/svg?seed=user123" class="w-16 h-16 rounded-full border border-cyan-500 shadow" alt="User Avatar" />
+      <div>
+        <p class="text-xl font-semibold flex items-center gap-2">
+          Anonymous
+          <span class="text-yellow-400">⭐️⭐️⭐️</span>
+          <span class="text-gray-500">☆ ☆</span>
+        </p>
+        <p class="text-gray-400 text-sm">WalletID: ##..2gF</p>
+      </div>
+    </div>
+
+    <!-- Theme Toggle -->
+    <div class="flex items-center justify-between">
+      <span class="text-white">🌗 Dark Mode</span>
+      <label class="relative inline-flex items-center cursor-pointer">
+        <input type="checkbox" id="themeToggle" class="sr-only peer" />
+        <div class="w-11 h-6 bg-gray-600 peer-focus:outline-none rounded-full peer peer-checked:bg-cyan-500"></div>
+      </label>
+    </div>
+
+    <!-- Notification Toggle -->
+    <div class="flex items-center justify-between">
+      <span class="text-white">🔔 Enable Notifications</span>
+      <label class="relative inline-flex items-center cursor-pointer">
+        <input type="checkbox" class="sr-only peer" checked />
+        <div class="w-11 h-6 bg-gray-600 peer-focus:outline-none rounded-full peer peer-checked:bg-cyan-500"></div>
+      </label>
+    </div>
+
+    <!-- Alias Input -->
+    <div>
+      <label class="block text-white mb-1">🆔 Display Alias</label>
+      <input type="text" placeholder="AnonTiger42" class="w-full bg-gray-800 text-white px-4 py-2 rounded border border-gray-600 focus:outline-none focus:border-cyan-400" />
+    </div>
+
+    <!-- Disconnect Wallet -->
+    <button class="bg-red-600 hover:bg-red-500 text-white px-4 py-2 rounded w-full transition">
+      🔓 Disconnect Wallet
+    </button>
+
+    <!-- Help Me Button -->
+    <a href="help.html"> <button class="bg-cyan-500 hover:bg-cyan-400 text-white px-4 py-3 rounded w-full transition btn-glow">
+      🆘 Help Me
+    </button></a>
+
+  </main>
+
+</body>
+</html>
